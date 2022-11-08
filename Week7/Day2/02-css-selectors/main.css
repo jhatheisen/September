@@ -19,9 +19,12 @@ pre {
   padding-bottom: 100px;
 }
 
+a:link {
+  text-decoration: none;
+}
+
 .td2 a:link {
   color: blue;
-  text-decoration: none;
 }
 .td2 a:hover {
   color: #4fc3f7;
