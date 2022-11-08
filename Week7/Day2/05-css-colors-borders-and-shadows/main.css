@@ -1,29 +1,38 @@
 .box1 {
   background-color: blueviolet;
+  border: solid 5px blue;
 }
 
 .box2 {
   background-color: greenyellow;
+  border: dotted 2px red;
+  border-radius: 5px;
 }
 
 .text1 {
-  background-color: blue;
+  background-color: #FFC300;
 }
 
 .text2 {
-  background-color: burlywood;
+  background-color: rgb(214,122,127);
 }
 
 .box3 {
-  background-color: lavender;
+  background-color: rgba(230, 230, 250, 0.6);
+}
+
+h2 {
+  opacity: 0.5;
 }
 
 .box5 {
   background-color: lemonchiffon;
+  box-shadow: 2px 8px 15px teal;
 }
 
 .box6 {
   background-color: papayawhip;
+  box-shadow: 5px -10px #800000;
 }
 
 
