@@ -1,10 +1,13 @@
 html, body {
     font-family: sans-serif;
+    background-color: antiquewhite;
+    height: 170vh;
 }
 
 .container {
     background-color: #2b2d2f;
     position: relative;
+    height: 170vh;
 }
 
 .element {
@@ -17,8 +20,7 @@ html, body {
 
 #yellow-box {
     background-color: #ffff00;
-    /* Fill these in
-    position: ;
+    position: static;
     bottom: 0;
     left: 0;
     right: 0;
@@ -28,32 +30,26 @@ html, body {
 
 #pink-box {
     background-color: #ff69b4;
-    /* Fill these in
-    position: ;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
-    top: 0;
+    top: 20px;
     z-index: ;
 }
 
 #blue-box {
     background-color: #00eeee;
-    /* Fill these in
-    position: ;
-    bottom: 0;
+    position: absolute;
     left: 0;
-    right: 0;
-    top: 0;
-    z-index: ;
+    top: 50px;
+    z-index: 1;
 }
 
 #red-box {
     background-color: #ff0000;
-    /* Fill these in
-    position: ;
-    bottom: 0;
-    left: 0;
+    position: fixed;
+    left: 400px;
     right: 0;
     top: 0;
     z-index: ;
@@ -61,11 +57,6 @@ html, body {
 
 #orange-box {
     background-color: #ffa500;
-    /* Fill these in
-    position: ;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: ;
+    position: sticky;
+    top: 60px;
 }
