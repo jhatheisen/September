@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
+body{
+  background-image: linear-gradient(to top, #a0afb3, #77d2ff, #99bdff, #bda5f5);
+  height: 100vh;
+}
+
 h1 {
     font-size: ;
-    font-family: ;
+    font-family: 'Roboto Slab', serif;
     padding: ;
-    margin: ;
+    width: fit-content;
+    margin: auto;
     font-weight: ;
     text-decoration: ;
     color: ;
@@ -11,27 +19,39 @@ h1 {
 
 h2 {
     font-size: ;
-    font-family: ;
-    padding: ;
-    margin: ;
+    font-family: sans-serif;
+    padding-top: 25px;
+    width: fit-content;
+    margin: auto;
     font-weight: ;
+    text-decoration: underline;
     color: ;
     background-color: ;
 }
 
+em {
+  width: fit-content;
+  margin: auto;
+  font-weight: bold;
+}
+
 p {
     font-family: ;
-    font-size: ;
+    font-size: large;
     padding: ;
-    margin: ;
+    margin: .75em 20%;
+    text-align: justify;
     color: ;
     background-color: ;
 }
 
 .logo {
     background-size: cover;
-    background-image: url();
+    background-image: url(https://appacademy.github.io/styleguide/assets/logo/logo-emblem-black-1000.png);
     background-color: ;
-    height: ;
-    width: ;
+    position: fixed;
+    bottom: 1%;
+    left: 1%;
+    height: 100px;
+    width: 100px;
 }
