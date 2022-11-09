@@ -15,7 +15,7 @@ html, body, div {
     grid-template-columns: 3fr auto 1fr;
     grid-template-areas:
     "header header header"
-    "main . sidebar"
+    "main divider sidebar"
     "footer footer footer";
 
     /* Bonus Phase */
@@ -51,6 +51,7 @@ html, body, div {
     background-image: linear-gradient(to right, #e1f1dd, #cdc7be);
 
     /* Bonus Phase */
+    grid-area: divider;
     padding-right: 100px;
 }
 
