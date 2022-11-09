@@ -56,6 +56,40 @@ body {
   font-weight: normal;
 }
 
+.tabbed-nav__container {
+  background-color: #F4F5F7;
+}
+
+.tabbed-nav__group {
+  border-bottom: 1px solid #DFE1E6;
+  display: flex;
+  justify-content: center;
+}
+
+.tabbed-nav__link {
+  background-color: white;
+  border: 1px solid #DFE1E6;
+  border-bottom: 0;
+  border-radius: 2px;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 10px;
+  margin: 0 5px;
+  color: #172B4D;
+}
+
+@media screen and (min-width: 500px) {
+  .tabbed-nav__group * {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tabbed-nav__group, .tabbed-nav__link {
+    display: block;
+  }
+}
 /* Supplied CSS follows. */
 .header-nav__group {
   display: flex;
