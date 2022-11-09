@@ -107,15 +107,20 @@ header {
 
 @media print {
   .sidebar,
-  .image-box,
-  h1 {
+  header {
     display: none;
   }
-  /* body:not(.story-box *) {
-    display: none;
-  } */
+
   .story-box {
     filter: none;
-    border-radius: none;
+    background-color: unset;
+  }
+
+  .image-box {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 80px;
+    top: 50px;
   }
 }
