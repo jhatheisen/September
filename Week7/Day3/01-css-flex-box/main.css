@@ -7,7 +7,9 @@
 
     /* Phase 1 */
 
-    /* Your code here */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .example2 {
@@ -16,8 +18,10 @@
     padding: 16px;
 
     /* Phase 2 */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 
-    /* Your code here */
 }
 
 .example2 > button {
@@ -46,13 +50,18 @@
 
     /* Phase 3 */
 
-    /* Your code here */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+    flex-basis: 33%;
 }
 
 .example4 {
     /* Phase 4 - Part 1 of 2 */
 
-    /* Your code here */
+    display: flex;
+    flex-direction: row;
 }
 
 .sidebar {
@@ -60,8 +69,9 @@
     padding: 8px;
 
     /* Phase 4 - Part 2 of 2 */
+    display: inline-flex;
+    flex-direction: column;
 
-    /* Your code here */
 }
 .content-area {
     background-color: #E8EFF0;
