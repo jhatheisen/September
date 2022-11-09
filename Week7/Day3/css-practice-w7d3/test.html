@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a/A CSS Practice</title>
+  <style>
+    table {
+      width: 100%
+    }
+
+    fieldset {
+      margin-bottom: 1em
+    }
+
+    footer {
+      font-size: 8px
+    }
+
+    td {
+      width: 50%
+    }
+
+    #problem-3 {
+      box-sizing: border-box;
+      background-image: url("./images/problem3a.png");
+      background-size: cover;
+      box-sizing: border-box;
+      display: grid;
+      width: 150px;
+      height: 150px;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    #problem-3a {
+      background-color: orange;
+      margin: 2px;
+    }
+
+    #problem-4 {
+      height: 200px;
+      width: 200px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-areas:
+        "top-left top-middle top-right"
+        "middle-left center middle-right"
+        "bottom-left bottom-middle bottom-right";
+      background-image: url("./images/tttboard.png");
+      background-size: cover;
+    }
+
+
+  </style>
+  <link rel="stylesheet" href="./your-code.css">
+</head>
+
+<body>
+  <header>
+    <div>
+      <h2>Week 7 Day 3 Practice Problems</h2>
+      <p>
+        <b>INSTRUCTIONS:</b> Read the HTML here and in the browser.  Follow the
+        instructions to complete the problems.  All of your CSS code must go into
+        <i>your-code.css</i>.
+      </p>
+      <p><strong>Do not modify this file, test.html.</strong></p>
+      <p>
+        Each problem provides an image of what your result should look like on
+        the left side. Because of minor image rendering inconsistencies in the
+        browser, there are <em>for reference only</em>. It is ok if there are
+        pixel-sized differences between what you have and the image.
+      </p>
+      <p>
+        <strong>Your abjective is to make the content on the right side match
+          the image provided on the left
+        </strong>
+      </p>
+    </div>
+  </header>
+  <main>
+    <fieldset id="p1">
+      <legend>Problem 1</legend>
+      <div>
+        <p>
+          The element with the class "so-many-boxes" contains the already styled
+          elements in this problem.
+        </p>
+        <p style="font-style: italic;">
+          Apply the Flexible Box Model to "so-many-boxes" container element so
+          that its internal elements are laid out horizontally, reversed, and
+          spaced evenly in their container element.
+        </p>
+      </div>
+      <table border="0">
+        <tr>
+          <td>
+            <img src="./images/problem1.png">
+          </td>
+          <td>
+            <div id="problem-1" class="so-many-boxes" style="width:450px;">
+              <div id="problem-1a" class="box-1" style="width:50px;height:50px;background-color:purple;"></div>
+              <div id="problem-1b" class="box-2" style="width:50px;height:50px;background-color:blue"></div>
+              <div id="problem-1c" class="box-3" style="width:50px;height:50px;background-color:green;"></div>
+              <div id="problem-1d" class="box-4" style="width:50px;height:50px;background-color:red;"></div>
+              <div id="problem-1e" class="box-5" style="width:50px;height:50px;background-color:orange;"></div>
+              <div id="problem-1f" class="box-6" style="width:50px;height:50px;background-color:yellow;"></div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+    <fieldset id="p2">
+      <legend>Problem 2</legend>
+      <div>
+        <p>
+          The container div box below has a class of "numbers-container" and
+          then it contains five div's with the numbers 1 through 5.  Each number
+          div has an ID matching its number (so number 1 is "div-1" and number
+          2 is "div-2" and so on...)
+        </p>
+        <p style="font-style: italic;">
+          Apply the Flexible Box Model and order the numbers in ascending
+          numerical order, centered vertically in the container box and evenly spaced horizontally.
+        </p>
+      </div>
+      <table border="0">
+        <tr>
+          <td>
+            <img src="./images/problem2.png" style="height: 80px; width: 220px">
+          </td>
+          <td>
+            <div id="problem-2" class="numbers-container" style="height: 70px; width: 200px; border: 1px solid black;">
+              <div id="div-3">3️⃣</div>
+              <div id="div-1">1️⃣</div>
+              <div id="div-4">4️⃣</div>
+              <div id="div-5">5️⃣</div>
+              <div id="div-2">2️⃣</div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+    <fieldset id="p3">
+      <legend>Problem 3</legend>
+      <div>
+        <p>
+          The orange square has the "orange-square" class assigned to it. It
+          lives in a grid of three columns and three rows with a class of
+          "squares-grid" assigned to it.
+        </p>
+        <p style="font-style: italic;">
+          Create CSS rules that make the orange square cover the four squares in
+          the bottom right corner of the squares grid.
+        </p>
+      </div>
+      <table border="0">
+        <tr>
+          <td>
+            <img
+              src="./images/problem3b.png" style="height: 150px; margin-left: 25px;">
+          </td>
+          <td>
+            <div id="problem-3" class="squares-grid">
+              <div id="problem-3a" class="orange-square"></div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+    <fieldset id="p4">
+      <legend>Problem 4</legend>
+      <div>
+        <p>The tic tac toe grid below has the following grid template areas
+        setup: </p>
+          <p>"top-left top-middle top-right"</p>
+          <p>"middle-left center middle-right"</p>
+          <p>"bottom-left bottom-middle bottom-right"</p>
+        <p>There are also two image tags, for X and O, with the ID's of
+        "player-x" and "player-o" respectively</p>
+        <p style="font-style: italic;">
+          Move the X piece to the center space, and the O piece to the
+          bottom-right (like they appear below)
+        </p>
+      </div>
+      <table border="0">
+        <tr>
+          <td>
+            <img
+              src="./images/problem4.png" style="height: 200px; width: 200px">
+          </td>
+          <td>
+            <div id="problem-4" class="tic-tac-toe-grid">
+              <img id="player-x" src="https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-x.svg">
+              <img id="player-o" src="https://assets.aaonline.io/Module-DOM-API/formative-project-tic-tac-toe/player-o.svg">
+            </div>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+    <fieldset id="p5">
+      <legend>Problem 5</legend>
+      <div>
+        <p>
+          The box below has an ID of "media-magic" assigned to it.
+        </p>
+        <p style="font-style: italic;">
+          Create a media query, so if the screen width is greater than 1000px
+          the background color of the box is orangered, if it less than or equal to
+          1000px, the background color should be cornflowerblue.
+        </p>
+      </div>
+      <table border="0">
+        <tr>
+          <td>
+            <img src="./images/problem5.png"  style="height: 100px; width: 400px">
+          </td>
+          <td>
+            <div id="media-magic" style="height: 100px; width:400px; border: 3px solid black"></div>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+
+  </main>
+
+</body>
+
+</html>
