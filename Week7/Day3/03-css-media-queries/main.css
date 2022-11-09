@@ -73,25 +73,49 @@ header {
 /* ----- Default Screen ----- */
 .page {
     flex-direction: column;
+    /* border: 5px solid green; */
 }
 .content {
     flex-direction: column;
+    /* border: 5px solid red; */
 }
 .sidebar {
     flex-direction: row;
     justify-content: center;
+    /* border: 5px solid orange; */
 }
 
 /* ----- Phase 1 - Moderate Screen ----- */
 
-/* Your code here */
+@media screen and (min-width: 820px) {
+  .content {
+    flex-direction: row;
+  }
+}
 
 /* ----- Phase 1 - Wide Screen ----- */
 
-/* Your code here */
+@media screen and (min-width: 1220px) {
+  .page {
+    flex-direction: row;
+  }
+}
 
 /* ===== PRINTING ===== */
 
 /* Phase 2 */
 
-/* Your code here */
+@media print {
+  .sidebar,
+  .image-box,
+  h1 {
+    display: none;
+  }
+  /* body:not(.story-box *) {
+    display: none;
+  } */
+  .story-box {
+    filter: none;
+    border-radius: none;
+  }
+}
