@@ -1,23 +1,23 @@
 /* Your code here */
-body{
+body {
   font-family: 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-size: 14px;
   margin: 0;
 }
 
 .header-nav__container {
-background-color: #026AA7;
-font-size: 16px;
-line-height: 20px;
-padding: 4px;
-color: white;
+  background-color: #026AA7;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 4px;
+  color: white;
 
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-nav__group {
-margin: 3px;
+  margin: 3px;
 }
 
 #alerts {
@@ -25,13 +25,16 @@ margin: 3px;
 }
 
 @media screen and (max-width: 800px) {
-#search, .boards-label {
-  display: none;
+
+  #search,
+  .boards-label {
+    display: none;
+  }
 }
 
-}
+
 /* Supplied CSS follows. */
-.header-nav__group{
+.header-nav__group {
   display: flex;
 }
 
@@ -43,7 +46,7 @@ margin: 3px;
   text-decoration: none;
   align-items: center;
   text-align: center;
-  background-color: hsla(0,0%,100%,.3);
+  background-color: hsla(0, 0%, 100%, .3);
   box-shadow: none;
   color: #fff;
   line-height: 32px;
@@ -54,7 +57,7 @@ margin: 3px;
   height: 20px;
 }
 
-.header-nav__button#search > input {
+.header-nav__button#search>input {
   border-style: none;
   border: none;
   background-image: none;
@@ -64,7 +67,7 @@ margin: 3px;
   box-shadow: none;
 }
 
-.header-nav__button > .boards-label {
+.header-nav__button>.boards-label {
   font-weight: 700;
   padding-left: 4px;
 }
@@ -78,6 +81,6 @@ margin: 3px;
   top: 5px;
 }
 
- .header-nav__button > i{
+.header-nav__button>i {
   width: 24px;
 }
