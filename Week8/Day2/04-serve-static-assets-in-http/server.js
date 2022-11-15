@@ -2,12 +2,7 @@ const http = require('http');
 const fs = require("fs");
 
 const server = http.createServer((req, res) => {
-
-
-  let urlPath = req.url.split('/');
-  // try location, catch error
-  // if location real
-
+  
   let path = req.url;
   // check if static in url
   if (path.slice(0, 7) === '/static') {
