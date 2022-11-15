@@ -16,25 +16,38 @@ const server = http.createServer((req, res) => {
   req.on("end", () => {
     if (reqBody) {
       console.log(reqBody);
+      reqBody = reqBody.split('&');
+      console.log(reqBody);
+      reqBody = reqBody.map(keyValuePair => keyValuePair.split('='));
+      console.log(reqBody);
+      reqBody = reqBody.map(([key, value]) => [key, value.replace(/\+/g, " ")]);
+      console.log(reqBody);
+      reqBody = reqBody.map(([key, value]) => [key, decodeURIComponent(value)]);
+      console.log(reqBody);
+      reqBody = reqBody.reduce((acc, [key, value]) => {
+        acc[key] = value;
+        return acc;
+      }, {});
+      console.log(reqBody);
     }
   });
 
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/css');
-  const responseBody = `
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello there!</h1>
-  </body>
-  </html>
-`;
-  res.end(responseBody);
+//   res.statusCode = 200;
+//   res.setHeader('Content-Type', 'text/css');
+//   const responseBody = `
+//   <!DOCTYPE html>
+//   <html lang="en">
+//   <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Hello World!</title>
+//   </head>
+//   <body>
+//     <h1>Hello there!</h1>
+//   </body>
+//   </html>
+// `;
+//   res.end(responseBody);
 
 });
 
