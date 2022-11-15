@@ -8,14 +8,16 @@ const server = http.createServer((req, res) => {
   // console.log(res);
 
   // parse req
-  // let reqBody = '';
-  // req.on('data', (data) => {
-  //   reqBody += data;
-  // });
+  let reqBody = "";
+  req.on("data", (data) => {
+    reqBody += data;
+  });
 
-  // req.on('end', () => {
-  //   console.log(reqBody);
-  // });
+  req.on("end", () => {
+    if (reqBody) {
+      console.log(reqBody);
+    }
+  });
 
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/css');
