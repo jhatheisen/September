@@ -34,25 +34,71 @@ const server = http.createServer((req, res) => {
     // Do not edit above this line
 
     // define route handlers here
+    // home page
     if (req.method === 'GET' && req.url === '/') {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/plain');
       return res.end('Dog Club');
     }
 
+    // dog index
     if (req.method === 'GET' && req.url === '/dogs') {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/plain');
       return res.end('Dog index');
     }
 
-    let urlPath = req.url.split('/');
-    let holderPath = '/dogs/:dogId'.split('/');
-    let matching = urlPath.length === holderPath.length && urlPath[1] === 'dogs';
 
-    if (req.method === 'GET' && matching) {
+    // dog create form page
+    if (req.method === 'GET' && req.url === '/dogs/new') {
       res.statusCode = 200;
-      res.setHeader()
+      res.setHeader('Content-Type', 'text/plain');
+      return res.end('Dog Create form page');
+    }
+
+    // posting gen new dog id and redirect
+    if (req.method === 'POST' && req.url === '/dogs') {
+      let newDogId = getNewDogId();
+      res.statusCode = 302;
+      res.setHeader('Location', `/dogs/${newDogId}`)
+      return res.end();
+    }
+
+
+    // show details for dog id
+    let urlPath = req.url.split('/');
+    // just change placeholder path
+    let holderPath = '/dogs/:dogId'.split('/');
+    let dogId = Number(urlPath[2]);
+    let isDogIdURL = urlPath.length === holderPath.length
+                  && urlPath[1] === holderPath[1]
+                  && typeof dogId === 'number';
+    console.log(urlPath, holderPath, isDogIdURL);
+    if (req.method === 'GET' && isDogIdURL) {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/plain');
+      return res.end(`Dog details for dogId: ${dogId}`);
+    }
+
+    // redirect to show details for dog id
+    if (req.method === 'POST' && isDogIdURL) {
+      res.statusCode = 302;
+      res.setHeader('Location', `/dogs/${dogId}`);
+      return res.end();
+    }
+
+    //holder path for dog edit page
+    holderPath = '/dogs/:dogId/edit'.split('/');
+    // same as dog id url, but 3 part is same
+    let isDogEditUrl = urlPath.length === holderPath.length
+                    && urlPath[1] === holderPath[1]
+                    && typeof dogId === 'number'
+                    && urlPath[3] === holderPath[3];
+    // dog edit page
+    if (req.method === 'GET' && isDogEditUrl) {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/plain');
+      return res.end(`Dog edit form page for dogId: ${dogId}`);
     }
 
     // Do not edit below this line
