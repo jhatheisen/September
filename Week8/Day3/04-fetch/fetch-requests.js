@@ -13,8 +13,8 @@ fetch('/products')
   });
 
 fetch('/products')
-  .then(res => res.status)
-  .then(console.log);
+.then(res => res.text())
+.then(console.log);
 
 
 
@@ -49,3 +49,33 @@ async function getBody(url) {
 }
 
 getBody('/products');
+
+const getProducts = async () => {
+  const response = await fetch('/products');
+
+  console.log('response ', response);
+
+  console.log('response ok?', response.ok);
+
+  if (response.ok) {
+    console.log('response status ', response.status);
+    console.log('response headers ', response.headers.get('Content-Type'));
+
+    response.text().then(body => console.log('response body ', body));
+  }
+
+}
+
+getProducts();
+
+fetch('/products').then((response) => {
+  console.log('response ', response);
+  console.log('response ok?', response.ok);
+
+  if (response.ok) {
+    console.log('response status ', response.status);
+    console.log('response headers ', response.headers.get('Content-Type'));
+
+    response.text().then(body => console.log('response body ', body));
+  }
+});
