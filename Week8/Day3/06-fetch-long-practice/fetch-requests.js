@@ -48,7 +48,7 @@ fetch('/products', {
 
 // 4
 
-let body = new URLSearchParams({
+body = new URLSearchParams({
   name: "Razer Black Widow",
   description: "RGB Gaming Keyboard",
   price: 100.00,
