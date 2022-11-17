@@ -1,49 +1,49 @@
-- Get all the posts
+Get all the posts
 
-GET /posts
+- GET /posts
 
-- Create a new post
+Create a new post
 
-POST /posts
+- POST /posts
 
-- Edit a post
+Edit a post
 
-PUT/PATCH /posts/:postId
+- PUT/PATCH /posts/:postId
 
-- Create a new user
+Create a new user
 
-POST /users
+- POST /users
 
-- Get the comments for a post
+Get the comments for a post
 
-GET /posts/:postId/comments
+- GET /posts/:postId/comments
 
-- Create a comment for a post
+Create a comment for a post
 
-POST /posts/:postId/comments
+- POST /posts/:postId/comments
 
-- Edit a comment for a post
+Edit a comment for a post
 
-PUT/PATCH /comments/:commentId
+- PUT/PATCH /comments/:commentId
 
-- Delete a comment for a post
+Delete a comment for a post
 
-DELETE /comments/:commentID
+- DELETE /comments/:commentID
 
-- Add a like for a post
+Add a like for a post
 
-POST /posts/:postId/likes
+- POST /posts/:postId/likes
 
-- Remove a like for a post
+Remove a like for a post
 
-DELETE "/posts/:postId"? /likes/:likesId
+- DELETE /likes/:likesId
 
-- Get all the posts of a user
+Get all the posts of a user
 
-GET /users/:userId/posts
+- GET /users/:userId/posts
 
-- Submit a search on posts-
+Submit a search on posts-
 
-POST /posts/search
+- POST /posts/search
 
-body : {'Search-Catagory' : 'funny'}
+- body : {'Search-Catagory' : 'funny'}
