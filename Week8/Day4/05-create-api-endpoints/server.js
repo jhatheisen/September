@@ -54,6 +54,9 @@ const server = http.createServer((req, res) => {
     // GET /dogs
     if (req.method === 'GET' && req.url === '/dogs') {
       // Your code here
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'application/json');
+      return res.end(JSON.stringify(dogs));
     }
 
     // GET /dogs/:dogId
@@ -62,6 +65,16 @@ const server = http.createServer((req, res) => {
       if (urlParts.length === 3) {
         const dogId = urlParts[2];
         // Your code here
+        // sort through dogs array
+
+        for (let dog of dogs) {
+          // if dog id is correct, then return dog as json
+          if (dog.dogId == dogId) {
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'application/json');
+            return res.end(JSON.stringify(dog));
+          }
+        }
       }
     }
 
@@ -69,6 +82,16 @@ const server = http.createServer((req, res) => {
     if (req.method === 'POST' && req.url === '/dogs') {
       const { name, age } = req.body;
       // Your code here
+      let newDog = {
+        dogId: getNewDogId(),
+        name: name,
+        age: Number(age),
+      }
+      dogs.push(newDog);
+
+      res.statusCode = 201;
+      res.setHeader('Content-Type', 'application/json');
+      return res.end(JSON.stringify(newDog));
     }
 
     // PUT or PATCH /dogs/:dogId
@@ -77,6 +100,21 @@ const server = http.createServer((req, res) => {
       if (urlParts.length === 3) {
         const dogId = urlParts[2];
         // Your code here
+
+        // find and set dog
+        let currDog = dogs.find((dog) => dog.dogId == dogId);
+        const { name , age } = req.body;
+
+        // if name and age, change those vals on dog
+        if (currDog) {
+          if (name) currDog.name = name;
+          if (age) currDog.age = age;
+        }
+
+        // return succesfully updated
+        res.statusCode = 201;
+        res.setHeader("Content-Type", "application/json");
+        return res.end(JSON.stringify(currDog));
       }
     }
 
@@ -86,6 +124,22 @@ const server = http.createServer((req, res) => {
       if (urlParts.length === 3) {
         const dogId = urlParts[2];
         // Your code here
+        // find dog index
+        let dogI;
+        for (let i = 0; i < dogs.length; i++) {
+          // if dog id is correct, then return dog as json
+          let dog = dogs[i]
+          if (dog.dogId == dogId) {
+            dogI = i;
+            break;
+          }
+        }
+        // delete
+        dogs.splice(dogI, 1);
+        // send res
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        return res.end(JSON.stringify("Successfully deleted"));
       }
     }
 

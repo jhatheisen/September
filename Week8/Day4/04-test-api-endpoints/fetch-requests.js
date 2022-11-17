@@ -9,7 +9,9 @@ Paste your code for fetch requests here once you finish each task.
   components to the console.
 */
 
-// Your code here
+fetch('/dogs/1')
+  .then(res => res.json())
+  .then(resBody => console.log(resBody));
 
 
 
@@ -19,4 +21,13 @@ Paste your code for fetch requests here once you finish each task.
   components to the console.
 */
 
-// Your code here
+fetch('/dogs', {
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    name: "J",
+    age: ""
+  })
+})
