@@ -2,18 +2,17 @@ const http = require('http');
 
 const server = http.createServer((req, res) => {
   console.log(`${req.method} ${req.url}`);
-
   let reqBody = "";
   req.on("data", (data) => {
     reqBody += data;
   });
-
   req.on("end", () => {
     // Parse the body of the request as JSON if Content-Type header is
       // application/json
     // Parse the body of the request as x-www-form-urlencoded if Content-Type
       // header is x-www-form-urlencoded
-    if (reqBody) {
+    if(req.headers['content-type'] === "x-www-form-urlencoded"){
+       if (reqBody) {
       req.body = reqBody
         .split("&")
         .map((keyValuePair) => keyValuePair.split("="))
@@ -23,16 +22,20 @@ const server = http.createServer((req, res) => {
           acc[key] = value;
           return acc;
         }, {});
-
       // Log the body of the request to the terminal
       console.log(req.body);
     }
-
+    }
+    if (req.headers['content-type'] === "application/json"){
+      console.log(JSON.parse(reqBody));
+    }
     const resBody = {
       "Hello": "World!"
     };
-
     // Return the `resBody` object as JSON in the body of the response
+    // res.statusCode = 200;
+    // res.setHeader("Content-Type", "application/json")
+    // return res.end(JSON.stringify(resBody));
   });
 });
 
