@@ -27,10 +27,10 @@ function liftWeights() {
 
 // refactor this function to handle Promises using async/await instead of
   // .then and .catch
-async function workout() {
-  await stretch();
-  await runOnTreadmill();
-  await liftWeights();
+  async function workout() {
+    await runOnTreadmill();
+    await stretch();
+    await liftWeights();
   console.log('done working out');
 }
 

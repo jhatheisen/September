@@ -55,7 +55,7 @@ function workout(totalTime) {
   // Your code here
   stretch(totalTime)
     .then((timeLeft) => runOnTreadmill(timeLeft))
-    .then(liftWeights)
+    .then((timeLeft) => liftWeights(timeLeft))
     .then((timeLeft) => console.log(`You finished your workout with ${timeLeft} miliseconds left.`))
     .catch(console.log);
 }
