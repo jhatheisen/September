@@ -3,6 +3,13 @@ fetch('/dogs')
   .then(res => res.json())
   .then(resBody => console.log(resBody));
 
+fetch('/artists/1/albums')
+  .then(res => {
+    console.log(res.status);
+    console.log(res.headers.get('Content-Type'));
+    res.json().then(console.log);
+  })
+
 // GET /dogs/:dogId
 fetch('/dogs/2')
   .then(res => res.json())
@@ -40,4 +47,3 @@ fetch('/dogs/1', {
   method: 'DELETE'
 }).then(res => res.json())
 .then(resBody => console.log(resBody));
-
