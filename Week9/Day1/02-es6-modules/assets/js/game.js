@@ -1,4 +1,9 @@
-class Game {
+import { getIndex } from "./utilities.js";
+import mrDrPotatoHeadQuotes  from './quotes/mrPotatoHead.js';
+import * as quotes from './quotes/mrsPotatoHead.js';
+
+
+export class Game {
 
   start() {
 
@@ -6,9 +11,9 @@ class Game {
       const index = getIndex();
       const messageContainer = document.getElementById('message');
       if (index === 1) {
-        messageContainer.innerText = mrPotatoHeadQuotes['hello'];
+        messageContainer.innerText = mrDrPotatoHeadQuotes['hello'];
       } else {
-        messageContainer.innerText = mrsPotatoHeadQuotes['hello'];
+        messageContainer.innerText = quotes.mrsPotatoHeadQuotes['hello'];
       }
     });
 
@@ -16,9 +21,9 @@ class Game {
       const index = getIndex();
       const messageContainer = document.getElementById('message');
       if (index === 1) {
-        messageContainer.innerText = mrPotatoHeadQuotes['bye'];
+        messageContainer.innerText = mrDrPotatoHeadQuotes['bye'];
       } else {
-        messageContainer.innerText = mrsPotatoHeadQuotes['bye'];
+        messageContainer.innerText = quotes.mrsPotatoHeadQuotes['bye'];
       }
     });
 
