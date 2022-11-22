@@ -19,18 +19,23 @@ add.addEventListener("click", async () => {
             file to create a new image with the url) */
         // Your code here
         const newCard = document.createElement('li');
-        const figure = document.createElement('figure');
+        newCard.innerHTML = `<figure>
+                                <img src="${url}" />
+                                <figcaption>${breed}</figcaption>
+                             </figure>`;
 
-        const img = document.createElement('img');
-        img.setAttribute('src', url);
+        // const figure = document.createElement('figure');
 
-        const figcap = document.createElement('figcaption');
-        figcap.innerText = breed;
+        // const img = document.createElement('img');
+        // img.setAttribute('src', url);
 
-        figure.appendChild(img);
-        figure.appendChild(figcap);
+        // const figcap = document.createElement('figcaption');
+        // figcap.innerText = breed;
 
-        newCard.appendChild(figure);
+        // figure.appendChild(img);
+        // figure.appendChild(figcap);
+
+        // newCard.appendChild(figure);
 
         /* Add the new dog card as a child to the ul in the .gallery element */
         // Your code here
