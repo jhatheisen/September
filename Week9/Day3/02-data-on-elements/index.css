@@ -8,3 +8,7 @@ li {
 
 /* Your code here */
 
+li[data-type='dairy'] {
+  background-color: blue;
+  color: white;
+}
